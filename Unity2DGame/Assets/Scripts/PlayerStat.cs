@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerStat : MonoBehaviour
 {
     public int health = 3;
     public int lives = 3;
-
+    public TextMeshProUGUI scoreUI;
     private float flickerTime = 0f;
     public float flickerDuration = 0.1f;
-
+    public static int score = 0;
     private SpriteRenderer sr;
 
     public bool isImmune = false;
@@ -32,6 +34,8 @@ public class PlayerStat : MonoBehaviour
                 sr.enabled = true;
             }
         }
+
+        scoreUI.text = " " + score;
     }
 
  
